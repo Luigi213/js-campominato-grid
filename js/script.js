@@ -14,6 +14,8 @@ button.addEventListener('click', function(){
         return elementSquare;
     }
     
+    let grid = document.getElementById('grid');
+
     for(let i=0; i<100; i++){
         const newElement = createSquare(i +1);
         
@@ -24,6 +26,4 @@ button.addEventListener('click', function(){
             console.log(i + 1)
         });
     }
-
-    let grid = document.getElementById('grid');
 });
