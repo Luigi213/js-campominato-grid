@@ -4,26 +4,78 @@
 //2.2 al click di una delle caselle si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 let button = document.getElementById('btn');
 button.addEventListener('click', function(){
-    function createSquare(num){
-        let elementSquare = document.createElement('div');
-
-        elementSquare.classList.add('square');
-
-        elementSquare.innerText = num;
-
-        return elementSquare;
+    let difficult = document.getElementById('stage').value;
+    console.log(difficult);
+    if(difficult === 'hard'){
+        function createSquare(num){
+            let elementSquare = document.createElement('div');
+    
+            elementSquare.classList.add('square-hard');
+    
+            elementSquare.innerText = num;
+    
+            return elementSquare;
+        }
+        
+        let grid = document.getElementById('grid');
+        
+        for(let i=0; i<100; i++){
+            const newElement = createSquare(i +1);
+            
+            grid.appendChild(newElement);
+            
+            newElement.addEventListener('click', function(){
+                this.classList.toggle('click')
+                console.log(i + 1)
+            });
+        }
     }
+    else if(difficult === 'medium'){
+        function createSquare(num){
+            let elementSquare = document.createElement('div');
     
-    let grid = document.getElementById('grid');
+            elementSquare.classList.add('square-medium');
     
-    for(let i=0; i<100; i++){
-        const newElement = createSquare(i +1);
+            elementSquare.innerText = num;
+    
+            return elementSquare;
+        }
         
-        grid.appendChild(newElement);
+        let grid = document.getElementById('grid');
         
-        newElement.addEventListener('click', function(){
-            this.classList.toggle('click')
-            console.log(i + 1)
-        });
+        for(let i=0; i<81; i++){
+            const newElement = createSquare(i +1);
+            
+            grid.appendChild(newElement);
+            
+            newElement.addEventListener('click', function(){
+                this.classList.toggle('click')
+                console.log(i + 1)
+            });
+        }    
+    }
+    else{
+        function createSquare(num){
+            let elementSquare = document.createElement('div');
+    
+            elementSquare.classList.add('square-easy');
+    
+            elementSquare.innerText = num;
+    
+            return elementSquare;
+        }
+        
+        let grid = document.getElementById('grid');
+        
+        for(let i=0; i<49; i++){
+            const newElement = createSquare(i +1);
+            
+            grid.appendChild(newElement);
+            
+            newElement.addEventListener('click', function(){
+                this.classList.toggle('click')
+                console.log(i + 1)
+            });
+        }    
     }
 }, {once : true});

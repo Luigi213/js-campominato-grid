@@ -31,7 +31,7 @@
 }
 
 .row-main{
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     padding: 22px 0;
 }
@@ -47,15 +47,35 @@
     height: 100%;
 }
 
-.square{
+.square-easy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    background-color: rgb(127, 255, 212);
+    border: 2px solid black;
+}
 
+.square-medium{
+    display: flex;
+    justify-content: center;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    background-color: rgb(127, 255, 212);
+    border: 2px solid black;
+}
+
+.square-hard{
+    display: flex;
+    justify-content: center;
     width: calc(100% / 10);
     height: calc(100% / 10);
     background-color: rgb(127, 255, 212);
     border: 2px solid black;
 }
 
-.square.click{
+.click{
     background-color: orange;
 }
 
