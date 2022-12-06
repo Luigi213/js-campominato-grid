@@ -15,15 +15,15 @@ button.addEventListener('click', function(){
     }
     
     let grid = document.getElementById('grid');
-
+    
     for(let i=0; i<100; i++){
         const newElement = createSquare(i +1);
         
         grid.appendChild(newElement);
         
         newElement.addEventListener('click', function(){
-            this.classList.add('click')
+            this.classList.toggle('click')
             console.log(i + 1)
         });
     }
-});
+}, {once : true});
