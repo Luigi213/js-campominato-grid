@@ -5,7 +5,6 @@
 let button = document.getElementById('btn');
 button.addEventListener('click', function(){
     let difficult = document.getElementById('stage').value;
-    console.log(difficult);
     if(difficult === 'hard'){
         function createSquare(num){
             let elementSquare = document.createElement('div');
