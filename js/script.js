@@ -7,6 +7,7 @@ button.addEventListener('click', function(){
     let difficult = document.getElementById('stage').value;
     if(difficult === 'hard'){
         function createSquare(num){
+
             let elementSquare = document.createElement('div');
     
             elementSquare.classList.add('square-hard');
@@ -17,7 +18,9 @@ button.addEventListener('click', function(){
         }
         
         let grid = document.getElementById('grid');
-        
+
+        document.getElementById('grid').innerHTML="";
+
         for(let i=0; i<100; i++){
             const newElement = createSquare(i +1);
             
@@ -41,6 +44,8 @@ button.addEventListener('click', function(){
         }
         
         let grid = document.getElementById('grid');
+
+        document.getElementById('grid').innerHTML="";
         
         for(let i=0; i<81; i++){
             const newElement = createSquare(i +1);
@@ -65,6 +70,8 @@ button.addEventListener('click', function(){
         }
         
         let grid = document.getElementById('grid');
+
+        document.getElementById('grid').innerHTML="";
         
         for(let i=0; i<49; i++){
             const newElement = createSquare(i +1);
@@ -77,4 +84,4 @@ button.addEventListener('click', function(){
             });
         }    
     }
-}, {once : true});
+});
